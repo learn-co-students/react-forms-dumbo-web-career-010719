@@ -9,7 +9,7 @@ class ControlledInput extends React.Component {
 
   handleChange = event => {
     this.setState({
-      value: event.target.value,
+      [event.target.name]: event.target.value,
     });
   }
 
@@ -18,6 +18,7 @@ class ControlledInput extends React.Component {
       <form onSubmit={event => this.handleSubmit(event)}>
         <input
           type="text"
+          name="value"
           value={this.state.value}
           onChange={this.handleChange}
         />
